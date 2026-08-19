@@ -120,231 +120,12 @@ O projeto se alinha aos seguintes **Objetivos de Desenvolvimento Sustentável (O
 ```
 Mobo/
 ├── .github/
-│ └── workflows/ # CI/CD e auto-assign de issues
 ├── backend/
-│ ├── src/ # Código-fonte da API
-│ ├── .env.example # Exemplo de variáveis de ambiente
-│ ├── package.json
-│ └── tsconfig.json
-├── frontend/
-│ ├── mobile/ # Aplicativo React Native + Expo
-│ │ ├── app/ # Telas do aplicativo (.tsx)
-│ │ │ ├── layout.tsx
-│ │ │ ├── alertas.tsx
-│ │ │ ├── cadastro.tsx
-│ │ │ ├── cadastroTerreno.tsx
-│ │ │ ├── curiosidades.tsx
-│ │ │ ├── dashboard.tsx
-│ │ │ ├── garra.tsx
-│ │ │ ├── home.tsx
-│ │ │ ├── login.tsx
-│ │ │ ├── perfil.tsx
-│ │ │ ├── previsao-de-colheita.tsx
-│ │ │ └── sensores.tsx
-│ │ ├── assets/images/
-│ │ ├── app.json
-│ │ ├── package.json
-│ │ └── tsconfig.json
-│ └── web/ # Aplicação Next.js
-│ ├── public/
-│ ├── src/
-│ ├── next.config.ts
-│ ├── package.json
-│ └── tsconfig.json
-├── database/ # Dados de teste para banco local (seeds, fixtures, backups)
-├── IoT/ # Integração com hardware e IA para colheita
-│ ├── BracoEsteira.ino # Código Arduino para controle do braço mecânico
-│ └── script_gera_dataset/ # Scripts Python para geração de dataset de treinamento
-│ ├── gerar_dataset.py
-│ ├── requirements.txt
-│ ├── dataset_lichia*/ # Datasets organizados (train/val/test)
-│ └── yolo11x.pt # Modelo YOLOv11 pré-treinado (Git LFS) ⚠️
-├── .gitignore
-└── README.md
+├── web/
+├── mobile/
+├── firmware/
+└── ai/
 ```
-
-> ⚠️ **Atenção:** A estrutura atual usa `frontend/` (sem hífen). Documentações antigas podem referenciar `front-end/` — desconsidere esses caminhos.
-
----
-
-## 🚀 Como Rodar Localmente
-
-### Pré-requisitos
-
-Antes de começar, instale:
-
-- [Node.js](https://nodejs.org/) v20 LTS (recomendado)
-- [Git](https://git-scm.com/)
-- [MongoDB](https://www.mongodb.com/) local **ou** conta no [MongoDB Atlas](https://www.mongodb.com/atlas)
-- [Expo Go](https://expo.dev/go) no celular (para testar o app mobile)
-
-### 1. Clonar o Repositório
-
-```bash
-git clone https://github.com/Cypher-Wave/Mobo.git
-cd Mobo
-```
-
----
-
-### 2. Backend (Node.js + TypeScript)
-
-```bash
-cd backend
-npm install
-```
-
-#### Configurar variáveis de ambiente
-
-Na pasta `backend`, crie um arquivo `.env` baseado no `.env.example` disponível no repositório.
-
-**Usando MongoDB local:**
-```env
-PORT=5000
-DB_NAME=mobo
-USE_LOCAL_DB=true
-JWT_SECRET=minha_chave_super_secreta_123
-NODE_ENV=development
-```
-
-A aplicação tentará conectar em `mongodb://127.0.0.1:27017/mobo`.
-
-**Usando MongoDB Atlas:**
-```env
-PORT=5000
-DB_USER=seu_usuario
-DB_PASSWORD=sua_senha
-DB_NAME=mobo
-USE_LOCAL_DB=false
-JWT_SECRET=minha_chave_super_secreta_123
-NODE_ENV=development
-```
-
-#### Rodar o backend
-
-```bash
-npm run dev
-```
-
-A API ficará disponível em `http://localhost:5000`.
-
----
-
-### 3. Frontend Web (Next.js)
-
-Em outro terminal:
-
-```bash
-cd frontend/web
-npm install
-npm run dev
-```
-
-Acesse [http://localhost:3000](http://localhost:3000) no navegador.
-
-> 💡 O frontend web está configurado para consumir a API em `http://localhost:5000`. Caso altere a porta do backend, ajuste também a URL da API no frontend web.
-
----
-
-### 4. Frontend Mobile (React Native + Expo)
-
-Em outro terminal:
-
-```bash
-cd frontend/mobile
-npm install
-npx expo start
-```
-
-Após iniciar, você pode:
-
-- Escanear o QR Code com o aplicativo **Expo Go** no celular
-- Pressionar `a` para abrir no emulador Android
-- Pressionar `i` para abrir no simulador iOS
-- Pressionar `w` para abrir no navegador
-
----
-
-### Ordem recomendada de execução
-
-Suba os serviços nesta ordem para facilitar a validação de cada camada:
-
-1. **Backend**
-2. **Frontend Web**
-3. **Frontend Mobile**
-
----
-
-## 🧪 Testes
-
-### Backend
-
-```bash
-cd backend
-npm test
-npm run test:coverage   # com cobertura
-```
-
-### Frontend Web
-
-```bash
-cd frontend/web
-npm test
-```
-
-### Frontend Mobile
-
-```bash
-cd frontend/mobile
-npm test
-```
-
-> ⚠️ Os testes de sistema completo (integração IoT + braço mecânico + IA) estão em desenvolvimento e serão implementados nas próximas sprints.
-
----
-
-## 🌿 Fluxo de Desenvolvimento com Git
-
-```bash
-# Criar uma branch
-git checkout -b feat/minha-feature
-
-# Ver alterações
-git status
-
-# Adicionar arquivos
-git add .
-
-# Criar commit
-git commit -m "feat: descrição da alteração"
-
-# Enviar para o GitHub
-git push -u origin feat/minha-feature
-```
-
-Após o envio, abra uma **Pull Request** no repositório.
-
----
-
-## ⚠️ Problemas Comuns
-
-### Erro de conexão com MongoDB
-
-Verifique se:
-- O arquivo `.env` foi criado corretamente
-- `USE_LOCAL_DB` está configurado de acordo com o ambiente
-- O MongoDB local está rodando (se usar banco local)
-- As credenciais do Atlas estão corretas (se usar nuvem)
-
-### Porta ocupada
-
-Se a porta `5000` estiver em uso, a aplicação pode falhar ao iniciar. Libere a porta ou ajuste no `.env`, lembrando de atualizar também a URL da API no frontend web.
-
-### Erro de CORS
-
-O backend está configurado para aceitar requisições do frontend rodando em `http://localhost:3000`. Ao rodar em outro endereço, pode ser necessário ajustar a configuração de CORS no backend.
-
----
 
 ## 🔗 Links Importantes
 
@@ -355,16 +136,11 @@ O backend está configurado para aceitar requisições do frontend rodando em `h
 | 📱 Deploy — Mobile (Expo) | `Em breve` |
 | 🎨 Protótipo Figma | `https://www.figma.com/design/xTZIWXjrK5TRtYm3Csh8h8/Mobo---UI?node-id=1-6998&t=Y23Z0Rf7ffm81J15-1` |
 
-> 🔔 Acompanhe as [issues](https://github.com/Cypher-Wave/Mobo/issues) do projeto para atualizações.
-
----
-
 ## 👥 Equipe
 
 | Nome | Função | GitHub |
 |------|--------|--------|
 | Bárbara Vitória Ferreira dos Santos | Frontend & UI/UX e Mobile | [@babi-s4ntos](https://github.com/babi-s4ntos) |
-| Jaquelaine Aparecida de Ramos | Documentação / IA /Mobile| [@jk-ramos](https://github.com/jk-ramos) |
 | Lucas de Lima Santana | IoT / IA / Mobile | [@LucasLiSan](https://github.com/LucasLiSan) |
 | Pedro Henrique Venâncio | Backend & DevOps / Front | [@phvenancio](https://github.com/phvenancio) |
 
@@ -382,9 +158,8 @@ O backend está configurado para aceitar requisições do frontend rodando em `h
 - [x] Protótipo físico do braço mecânico (impresso em 3D + Arduino)
 - [x] Testes iniciais de movimentação em ambiente controlado
 - [x] Modelo de IA (CNN) para reconhecimento do estágio de maturação *(próximo semestre)*
-- [ ] Coleta do dataset de imagens de lichia em campo
+- [x] Coleta do dataset de imagens de lichia em campo
 - [ ] Integração completa IoT + visão computacional + braço mecânico
-- [ ] Visualização em tempo real dos sensores IoT
 - [ ] Testes em campo real (pomares do Vale do Ribeira)
 - [ ] Versão acessível para pequenos produtores
 
@@ -401,49 +176,6 @@ O backend está configurado para aceitar requisições do frontend rodando em `h
 
   ---
 
-## 📡 Integração IoT & IA
-
-Esta seção contém os componentes de hardware e inteligência artificial para automação da colheita.
-
-### 📂 Conteúdo da Pasta `IoT/`
-
-| Arquivo/Pasta | Descrição |
-|--------------|-----------|
-| `BracoEsteira.ino` | Código Arduino para controle dos servomotores do braço mecânico e esteira |
-| `script_gera_dataset/` | Scripts Python para organização e augmentação de imagens de lichia |
-| `yolo11x.pt` | Modelo YOLOv11 pré-treinado para detecção de frutas em tempo real |
-
-### ⚙️ Como Utilizar
-
-#### Arduino (BracoEsteira.ino)
-1. Abra o arquivo `.ino` na [Arduino IDE](https://www.arduino.cc/en/software)
-2. Selecione a placa e a porta correta
-3. Faça o upload para o microcontrolador
-
-#### Dataset e IA (script_gera_dataset/)
-```bash
-cd IoT/script_gera_dataset
-
-# Instalar dependências Python
-pip install -r requirements.txt
-
-# Executar script de geração de dataset
-python gerar_dataset.py
-
-⚠️ Git LFS: O arquivo yolo11x.pt (109 MB) é gerenciado pelo Git Large File Storage.
-Para clonar este repositório em outra máquina:
-
-# 1. Instale o Git LFS (apenas uma vez por máquina)
-git lfs install
-
-# 2. Clone o repositório normalmente
-git clone https://github.com/Cypher-Wave/Mobo.git
-
-
----
-
-
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
@@ -459,5 +191,5 @@ Ministério da Educação — 2026
 ---
 
 <p align="center">
-  Feito com 🍈 pela equipe Mobo
+  Feito com ❤ pela equipe Mobo
 </p>
