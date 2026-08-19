@@ -19,7 +19,7 @@
 
 ## 📋 Sobre o Projeto
 
-O **Projeto Mobo** é uma solução multiplataforma para a colheita automatizada de lichia, integrando **IoT** e **Inteligência Artificial**. O sistema combinará visão computacional baseada em **redes neurais convolucionais**, sensoriamento remoto via IoT e automação robótica aplicados especificamente à cultura da lichia — fruta delicada que exige cuidados especiais durante a colheita.
+O **Projeto Mobo** é uma solução multiplataforma para a colheita automatizada de lichia, integrando **IoT** e **Inteligência Artificial**. O sistema combinará visão computacional baseada em **redes neurais convolucionais**, sensoriamento remoto via IoT e automação robótica aplicada especificamente à cultura da lichia — fruta delicada que exige cuidados especiais durante a colheita.
 
 O protótipo é composto por um **braço mecânico fabricado em impressora 3D** com pinça automatizada controlada por Arduino e aplicação multiplataforma para gestão e visualização dos dados.
 
@@ -46,7 +46,6 @@ O projeto se alinha aos seguintes **Objetivos de Desenvolvimento Sustentável (O
 - 🗺️ **Mapa de Sensores** — localização geográfica dos sensores e braços mecânicos
 - 👤 **Gestão de Usuários** — perfis de Administrador e Agricultor com permissões distintas
 - 📱 **Aplicativo Mobile** — versão mobile com todas as funcionalidades principais e controle da garra mecânica
-- Link do repositório da IA (https://github.com/Cypher-Wave/Mobo-IA)
 
 ---
 
@@ -85,7 +84,6 @@ O projeto se alinha aos seguintes **Objetivos de Desenvolvimento Sustentável (O
 
 ### Banco de Dados
 - **MongoDB Atlas** — armazenamento principal (dados de IoT, colheitas, usuários)
-- **MySQL** — modelo relacional para dados estruturados
 
 ### Ferramentas & Metodologia
 - **Scrum** — metodologia ágil com Sprints iterativos
