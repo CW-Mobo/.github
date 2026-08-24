@@ -113,17 +113,21 @@ O projeto se alinha aos seguintes **Objetivos de Desenvolvimento Sustentável (O
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📦 Repositórios
 
-```
-Mobo/
-├── .github/
-├── backend/
-├── web/
-├── mobile/
-├── firmware/
-└── ai/
-```
+O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por um dos módulos principais do sistema.
+
+| Repositório                                                     | Descrição                                                                                           |
+| --------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ⚙ [.github](https://github.com/CW-Mobo/.github) | Configurações compartilhadas do GitHub, templates de Issues e Pull Requests, workflows e demais recursos de organização do projeto |
+| 🔧 [API](https://github.com/CW-Mobo/backend)   | API REST, autenticação, regras de negócio e integração com o banco de dados                         |
+| 🌐 [Web](https://github.com/CW-Mobo/web)           | Aplicação web, dashboard e gerenciamento do sistema                                                 |
+| 📱 [Mobile](https://github.com/CW-Mobo/mobile)     | Aplicativo mobile para controle e interação com o braço mecânico                                    |
+| 🤖 [Firmware](https://github.com/CW-Mobo/firmware) | Firmware do ESP e controle dos componentes do braço mecânico                                        |
+| 🧠 [AI](https://github.com/CW-Mobo/ai)             | Modelos de Inteligência Artificial e visão computacional para reconhecimento da maturação da lichia |
+
+> Cada repositório possui seu próprio README com instruções específicas de instalação, configuração e execução.
+
 
 ## 🔗 Links Importantes
 
