@@ -128,6 +128,7 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 
 > Cada repositório possui seu próprio README com instruções específicas de instalação, configuração e execução.
 
+---
 
 ## 🔗 Links Importantes
 
@@ -137,6 +138,8 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 | 🌐 Deploy — Frontend Web | [mobocw.vercel.app](https://mobocw.vercel.app/) |
 | 📱 Deploy — Mobile (Expo) | `Em breve` |
 | 🎨 Protótipo Figma | `https://www.figma.com/design/xTZIWXjrK5TRtYm3Csh8h8/Mobo---UI?node-id=1-6998&t=Y23Z0Rf7ffm81J15-1` |
+
+---
 
 ## 👥 Equipe
 
@@ -176,7 +179,7 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 - Desenvolver versão acessível via parcerias com cooperativas agrícolas
 - Adaptar a tecnologia para outras frutas tropicais
 
-  ---
+---
 
 ## 📄 Licença
 
