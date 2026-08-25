@@ -130,17 +130,6 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 
 ---
 
-## 🔗 Links Importantes
-
-| Recurso | Link |
-|---------|------|
-| 📖 Documentação da API (Swagger) | `Em breve` |
-| 🌐 Deploy — Frontend Web | [mobocw.vercel.app](https://mobocw.vercel.app/) |
-| 📱 Deploy — Mobile (Expo) | `Em breve` |
-| 🎨 Protótipo Figma | `https://www.figma.com/design/xTZIWXjrK5TRtYm3Csh8h8/Mobo---UI?node-id=1-6998&t=Y23Z0Rf7ffm81J15-1` |
-
----
-
 ## 👥 Equipe
 
 | Nome | Função | GitHub |
