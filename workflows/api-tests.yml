@@ -1,14 +1,10 @@
-name: Tests
+name: API Tests
 
 on:
-  push:
-    branches:
-      - main
-      - develop
-  pull_request:
+  workflow_call:
 
 jobs:
-  tests:
+  test:
     runs-on: ubuntu-latest
 
     services:
@@ -23,7 +19,7 @@ jobs:
           --health-retries 5
 
     steps:
-      - name: Checkout repository
+      - name: Checkout API
         uses: actions/checkout@v4
 
       - name: Setup Node.js
