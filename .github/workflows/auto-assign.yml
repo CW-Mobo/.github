@@ -1,10 +1,7 @@
 name: Auto Assign
 
 on:
-  issues:
-    types: [opened]
-  pull_request:
-    types: [opened]
+  workflow_call:
 
 jobs:
   assign-frontend:
@@ -13,6 +10,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+
     steps:
       - name: Assign to frontend dev
         uses: pozil/auto-assign-issue@v1
@@ -27,6 +25,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+
     steps:
       - name: Assign to UI/UX designer
         uses: pozil/auto-assign-issue@v1
@@ -41,6 +40,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+
     steps:
       - name: Assign to DevOps
         uses: pozil/auto-assign-issue@v1
@@ -55,6 +55,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+
     steps:
       - name: Assign to backend
         uses: pozil/auto-assign-issue@v1
@@ -69,6 +70,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+
     steps:
       - name: Assign to documentation person
         uses: pozil/auto-assign-issue@v1
@@ -83,6 +85,7 @@ jobs:
     permissions:
       issues: write
       pull-requests: write
+
     steps:
       - name: Assign to IoT person
         uses: pozil/auto-assign-issue@v1
