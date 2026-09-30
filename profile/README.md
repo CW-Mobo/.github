@@ -6,6 +6,10 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Node.js](https://img.shields.io/badge/Node.js-backend-339933?logo=node.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-linguagem-3178C6?logo=typescript)
+![Express](https://img.shields.io/badge/Express-API-000000?logo=express)
+![Swagger](https://img.shields.io/badge/Swagger-OpenAPI%203.0-85EA2D?logo=swagger&logoColor=black)
+![Vitest](https://img.shields.io/badge/Vitest-testes-6E9F18?logo=vitest&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-container-2496ED?logo=docker&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-web-000000?logo=nextdotjs)
 ![React Native](https://img.shields.io/badge/React%20Native-mobile-61DAFB?logo=react)
 ![Expo](https://img.shields.io/badge/Expo-mobile-000020?logo=expo)
@@ -74,6 +78,9 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 - [Mongoose](https://mongoosejs.com/) — ODM para MongoDB
 - [MongoDB Atlas](https://www.mongodb.com/atlas) — banco de dados NoSQL na nuvem
 - [JWT](https://jwt.io/) — autenticação via tokens
+- [Swagger / OpenAPI](https://swagger.io/) — documentação e exploração interativa da API
+- [Vitest](https://vitest.dev/) — testes automatizados e cobertura de código
+- [Docker](https://www.docker.com/) — containerização e padronização do ambiente de execução
 - [Render](https://render.com/) — hospedagem do backend
 - [Cloudinary](https://cloudinary.com/) — armazenamento e gerenciamento de imagens
 
