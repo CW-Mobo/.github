@@ -77,11 +77,11 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 - [Render](https://render.com/) — hospedagem do backend
 - [Cloudinary](https://cloudinary.com/) — armazenamento e gerenciamento de imagens
 
-### Frontend Web
+### Web
 - [Next.js](https://nextjs.org/) + [TypeScript](https://www.typescriptlang.org/) — framework React com SSR/SSG
 - [Vercel](https://vercel.com/) — hospedagem do frontend
 
-### Frontend Mobile
+### Mobile
 - [React Native](https://reactnative.dev/) + [Expo](https://expo.dev/) + [TypeScript](https://www.typescriptlang.org/) — app multiplataforma (iOS e Android)
 
 ### Design
@@ -104,8 +104,8 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 
 ### Ferramentas & Metodologia
 - **Scrum** — metodologia ágil com Sprints iterativos
-- [LucidChart](https://www.lucidchart.com/) — diagramas UML e fluxogramas
-- [BrModelo](https://www.brmodeloweb.com/) — modelagem conceitual e lógica do banco de dados
+- [LucidChart](https://www.lucidchart.com/) — fluxogramas
+- [Draw.io](https://www.drawio.com/) — diagramas UML, modelagem conceitual e lógica do banco de dados
 
 ---
 
@@ -154,19 +154,17 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 - [x] Modelo de IA (CNN) para reconhecimento do estágio de maturação *(próximo semestre)*
 - [x] Coleta do dataset de imagens de lichia em campo
 - [ ] Integração completa IoT + visão computacional + braço mecânico
-- [ ] Testes em campo real (pomares do Vale do Ribeira)
 - [ ] Versão acessível para pequenos produtores
 
 ---
 
 ## 🔭 Trabalhos Futuros
 
-- Treinar modelo CNN para classificação de maturação com acurácia ≥ 85%
-- Investigar arquiteturas avançadas como **YOLO v8** e **EfficientNet** para detecção em tempo real
-- Integrar completamente os módulos de visão computacional, IoT e robótica
-- Realizar testes extensivos em pomares reais do Vale do Ribeira
-- Desenvolver versão acessível via parcerias com cooperativas agrícolas
-- Adaptar a tecnologia para outras frutas tropicais
+- Aprimorar Mobile, integrando ele a API
+- Correção de Bugs
+- Integrar Web e IA
+- Integrar Mobile e Garra
+- Reconhecimento de Maturação diretamente pela câmera
 
 ---
 
