@@ -118,21 +118,57 @@ O Projeto Mobo é dividido em diferentes repositórios, cada um responsável por
 
 ## 🏗️ Arquitetura do Sistema
 
-```
-┌──────────────────────────────────────────────────────────────┐
-│                        APLICAÇÃO MOBO                        │
-├──────────────────┬──────────────────┬────────────────────────┤
-│    Frontend      │     Backend      │    Hardware / IoT      │
-│                  │                  │                        │
-│  React (Web) +   │  Node.js +       │  Sensores IoT          │
-│     Vercel       │  TypeScript      │  (temp, umidade)       │
-│                  │  APIs RESTful    │                        │
-│  React Native    │                  │  Braço Mecânico 3D     │
-│  (Mobile / TS)   │  MongoDB Atlas   │  (Arduino + Servos)    │
-│                  │ (nuvem / Render) │                        │
-│  Figma (UX)      │  + Cloudinary    │  CNN / Visão Comp.     │
-│                  │                  │  (maturação da lichia) │
-└──────────────────┴──────────────────┴────────────────────────┘
+```mermaid
+flowchart LR
+    USER([Usuário])
+
+    subgraph APPS["Aplicações"]
+        WEB["Web<br/>Next.js"]
+        MOBILE["Mobile<br/>React Native + Expo"]
+    end
+
+    subgraph BACKEND["Backend"]
+        API["API REST<br/>Node.js + TypeScript + Express"]
+        AUTH["Autenticação<br/>JWT"]
+    end
+
+    subgraph DATA["Dados e Serviços"]
+        DB[("MongoDB Atlas")]
+        CLOUD["Cloudinary"]
+    end
+
+    subgraph IOT["IoT e Robótica"]
+        FW["Firmware<br/>Arduino / ESP"]
+        SENSORS["Sensores"]
+        ARM["Braço Mecânico"]
+        CAM["Câmera"]
+    end
+
+    subgraph AI["Inteligência Artificial"]
+        MODEL["Modelo de IA"]
+        MAT["Reconhecimento<br/>de maturação"]
+    end
+
+    USER --> WEB
+    USER --> MOBILE
+
+    WEB --> API
+    MOBILE --> API
+
+    API --> AUTH
+    AUTH --> DB
+
+    API --> DB
+    API --> CLOUD
+
+    API <--> FW
+    FW --> SENSORS
+    FW --> ARM
+    ARM --> CAM
+
+    CAM --> MODEL
+    MODEL --> MAT
+    MAT --> API
 ```
 
 ---
